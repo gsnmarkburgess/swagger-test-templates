@@ -16,7 +16,8 @@
       {{#if headerSecurity}}
       .set('Authorization', '{{headerSecurity.type}} ' + process.env.{{headerSecurity.name}})
       {{/if}}
-      .set('Accept', '{{contentType}}')
+      .set('Accept', '{{responseType}}')
+      .set('Content-Type', '{{contentType}}')
       {{#if headerParameters}}
       .set({
         {{#each headerParameters}}
@@ -97,7 +98,8 @@
           {{#if headerSecurity}}
           .set('Authorization', '{{headerSecurity.type}} ' + process.env.{{headerSecurity.name}})
           {{/if}}
-          .set('Accept', '{{contentType}}')
+          .set('Accept', '{{responseType}}')
+          .set('Content-Type', '{{contentType}}')
           {{#if headerParameters}}
           .set({
             {{#each headerParameters}}
